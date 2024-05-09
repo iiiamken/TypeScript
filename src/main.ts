@@ -15,3 +15,5 @@ const sum = (a: number, b: string) => {
 }
 
 let postId: string | number
+
+let re = /\w+/g
