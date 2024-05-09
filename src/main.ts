@@ -1,10 +1,17 @@
-var username = "dave"
-console.log(username)
+let myName: string = "Dave"
+let meaningOfLife: number
+let isLoading: boolean
+let album: any
+let myLocation: string | number
 
-let a: number = 12
-let b: string = "6"
-let c: number = 2
+myName = "John"
+meaningOfLife = 42
+isLoading = true
+album = 4
+myLocation = 42
 
-console.log(a / b)
+const sum = (a: number, b: string) => {
+  return a + b
+}
 
-console.log(c * b)
+let postId: string | number
