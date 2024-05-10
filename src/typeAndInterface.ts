@@ -77,3 +77,16 @@ const infinite = ()=> {
     }
   }
 }
+
+//custom type guard
+const isNumber = (value: any): boolean => {
+  return typeof value === "number" ? true : false
+}
+
+//when never type is useful
+const numberOrString = (value: number | string): string => {
+  if (typeof value === "string") return 'string'
+  if(isNumber(value)) return 'number'
+
+  return makeError("this code should never execute")
+}
