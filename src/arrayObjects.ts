@@ -66,3 +66,10 @@ const greetGuitarist = (guitarist: Guitarist) => {
     return `Hello ${guitarist.name}`
   }
 }
+
+const greetGuitarist2 = (guitarist: { name: string; active: boolean }) => {
+  if (guitarist.name) {
+    return `Hello ${guitarist.name.toLowerCase}`
+  }
+  return "Hello!"
+}
