@@ -1,87 +1,87 @@
-let stringArr = ["one", "hey", "dave"]
+// let stringArr = ["one", "hey", "dave"]
 
-let guitars = ["Strat", "Les Paul", 5150]
+// let guitars = ["Strat", "Les Paul", 5150]
 
-let mixedData = ["EVH", 1984, true]
+// let mixedData = ["EVH", 1984, true]
 
-stringArr[0] = "John"
+// stringArr[0] = "John"
 
-stringArr.push("hey")
+// stringArr.push("hey")
 
-guitars[0] = 1984
+// guitars[0] = 1984
 
-guitars.unshift("Jim")
+// guitars.unshift("Jim")
 
-let test = [1, 2, 3]
-let test2 = test
+// let test = [1, 2, 3]
+// let test2 = test
 
-//tuples
+// //tuples
 
-let myTuple: [string, number, boolean] = ["Dave", 42, true]
+// let myTuple: [string, number, boolean] = ["Dave", 42, true]
 
-let mixed = ["John", 5, false]
+// let mixed = ["John", 5, false]
 
-let bands: string[] = []
+// let bands: string[] = []
 
-mixed = myTuple // works bcus its exacly the same set of data types
+// mixed = myTuple // works bcus its exacly the same set of data types
 
-myTuple = mixed
+// myTuple = mixed
 
-myTuple[2] = true
+// myTuple[2] = true
 
-//Objects
-let myObj: object
-myObj = [] // will be type object
-myObj = bands //bands = array of strings
-myObj = {}
+// //Objects
+// let myObj: object
+// myObj = [] // will be type object
+// myObj = bands //bands = array of strings
+// myObj = {}
 
-const exampleObj = {
-  prop1: "Dave",
-  prop2: true,
-}
+// const exampleObj = {
+//   prop1: "Dave",
+//   prop2: true,
+// }
 
-exampleObj.prop1 = "john"
-exampleObj.prop1 = 5
+// exampleObj.prop1 = "john"
+// exampleObj.prop1 = 5
 
-interface Guitarist {
-  name: string
-  active?: boolean
-  albums: (number | string)[]
-}
+// interface Guitarist {
+//   name: string
+//   active?: boolean
+//   albums: (number | string)[]
+// }
 
-let evh: Guitarist = {
-  name: "Eddie",
-  active: false,
-  albums: [1984, 5150, "OU812"],
-}
+// let evh: Guitarist = {
+//   name: "Eddie",
+//   active: false,
+//   albums: [1984, 5150, "OU812"],
+// }
 
-let jp: Guitarist = {
-  name: "Jimmy",
-  active: true,
-  albums: ["I", "II", "III"],
-}
+// let jp: Guitarist = {
+//   name: "Jimmy",
+//   active: true,
+//   albums: ["I", "II", "III"],
+// }
 
-const greetGuitarist = (guitarist: Guitarist) => {
-  if (guitarist.active) {
-    return `Hello ${guitarist.name}`
-  }
-}
+// const greetGuitarist = (guitarist: Guitarist) => {
+//   if (guitarist.active) {
+//     return `Hello ${guitarist.name}`
+//   }
+// }
 
-const greetGuitarist2 = (guitarist: { name: string; active: boolean }) => {
-  if (guitarist.name) {
-    return `Hello ${guitarist.name.toLowerCase}`
-  }
-  return "Hello!"
-}
+// const greetGuitarist2 = (guitarist: { name: string; active: boolean }) => {
+//   if (guitarist.name) {
+//     return `Hello ${guitarist.name.toLowerCase}`
+//   }
+//   return "Hello!"
+// }
 
-// Enums
-//unlike most typescript features , enums are not a type-level
-//addition to JS but something added to the language and runtime
+// // Enums
+// //unlike most typescript features , enums are not a type-level
+// //addition to JS but something added to the language and runtime
 
-enum Grade {
-  U = 1,
-  D,
-  C,
-  B,
-  A,
-}
+// enum Grade {
+//   U = 1,
+//   D,
+//   C,
+//   B,
+//   A,
+// }
