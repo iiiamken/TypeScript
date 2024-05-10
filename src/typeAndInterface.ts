@@ -38,3 +38,14 @@ console.log(multiply(2, 2))
 //interfaces
 interface mathFunc {(a: number, b: number): number}
 
+//optional parameters
+const addAll = (a: number, b: number, c?: number): number => {
+  if (typeof c !== "undefined") { // "type guard"
+    return a + b + c
+  }
+  return a + b
+}
+
+const sumAll = (a: number, b: number, c: number = 0): number =>{
+  return a + b + c
+}
