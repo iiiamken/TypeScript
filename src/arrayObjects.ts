@@ -73,3 +73,15 @@ const greetGuitarist2 = (guitarist: { name: string; active: boolean }) => {
   }
   return "Hello!"
 }
+
+// Enums
+//unlike most typescript features , enums are not a type-level
+//addition to JS but something added to the language and runtime
+
+enum Grade {
+  U = 1,
+  D,
+  C,
+  B,
+  A,
+}
