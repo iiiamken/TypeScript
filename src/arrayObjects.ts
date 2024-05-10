@@ -42,3 +42,21 @@ const exampleObj = {
 
 exampleObj.prop1 = "john"
 exampleObj.prop1 = 5
+
+type Guitarist = {
+  name: string
+  active: boolean
+  albums: (number | string)[]
+}
+
+let evh: Guitarist = {
+  name: "Eddie",
+  active: false,
+  albums: [1984, 5150, "OU812"],
+}
+
+let jp: Guitarist = {
+  name: "Jimmy",
+  active: true,
+  albums: ["I", "II", "III"],
+}
