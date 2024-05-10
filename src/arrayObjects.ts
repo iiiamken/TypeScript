@@ -21,6 +21,8 @@ let myTuple: [string, number, boolean] = ["Dave", 42, true]
 
 let mixed = ["John", 5, false]
 
+let bands: string[] = []
+
 mixed = myTuple // works bcus its exacly the same set of data types
 
 myTuple = mixed
@@ -28,3 +30,15 @@ myTuple = mixed
 myTuple[2] = true
 
 //Objects
+let myObj: object
+myObj = [] // will be type object
+myObj = bands //bands = array of strings
+myObj = {}
+
+const exampleObj = {
+  prop1: "Dave",
+  prop2: true,
+}
+
+exampleObj.prop1 = "john"
+exampleObj.prop1 = 5
