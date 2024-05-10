@@ -46,6 +46,34 @@ const addAll = (a: number, b: number, c?: number): number => {
   return a + b
 }
 
+//default parameters
 const sumAll = (a: number, b: number, c: number = 0): number =>{
   return a + b + c
+}
+
+//rest parameters
+const total = (a:number, ...nums: number[]): number => {
+  return a + nums.reduce((pv, cv) => pv + cv)
+}
+
+//never type
+const makeError = (msg: string): never => {
+  throw new Error(msg)
+}
+
+// const infinite = (): never => {
+//   let i: number = 1
+//   while (true) {
+//     i++
+//     }
+//   }
+
+const infinite = ()=> {
+  let i: number = 1
+  while (true) {
+    i++
+    if (i > 100) { //added a break to avoid endless loop
+      break
+    }
+  }
 }
