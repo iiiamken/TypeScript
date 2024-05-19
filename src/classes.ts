@@ -82,3 +82,10 @@ class Peeps {
 
 const Ken = new Peeps("Ken")
 const Steve = new Peeps("Steve")
+
+//Peeps is the class itself while ken and Steve are instanciated objects using the constructor
+console.log(Peeps.count)
+console.log(Ken.id)
+console.log(Steve.id)
+
+//gitters and setters
