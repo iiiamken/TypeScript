@@ -61,3 +61,24 @@ class Guitarist implements Musician {
 
 const Page = new Guitarist("Jimmy", "guitar")
 console.log(Page.play("strums"))
+
+//static members.
+class Peeps {
+  static count: number = 0
+  /**
+   * Returns the current count of Peeps objects.
+   *
+   * @return {number} The current count of Peeps objects.
+   */
+  static getCount() {
+    return Peeps.count // we use the class name to access the static property and not this keyword
+  }
+  public id: number
+  constructor(public name: string) {
+    this.name = name
+    this.id = ++Peeps.count // ++ sign is used to increment, if we put it first it will be 1
+  }
+}
+
+const Ken = new Peeps("Ken")
+const Steve = new Peeps("Steve")
