@@ -29,3 +29,10 @@ const addOrConcat = (
 }
 
 let myVal: string = addOrConcat(2, 2, "concat") as string
+// careful using as-keyword as u may be wrong and TS will not give an error
+let nextVal: number = addOrConcat(2, 2, "concat") as number
+//TS will check Type assertions if possible
+10 as string
+
+//double casting
+10 as unknown as string
