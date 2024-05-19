@@ -17,7 +17,7 @@ class Coder {
 }
 
 const Dave = new Coder("Dave", "rock", 42, "typescript")
-//private vs public modifier
+//private vs protected modifier
 console.log(Dave.getAge()) //public method
-console.log(Dave.age) //public property
+console.log(Dave.age) //protected property
 console.log(Dave.music) //private property
