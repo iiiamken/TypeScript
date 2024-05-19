@@ -36,3 +36,14 @@ let nextVal: number = addOrConcat(2, 2, "concat") as number
 
 //double casting
 10 as unknown as string
+
+//useful type assertion with DOM manipulation
+//TS infers the type based on select method
+
+//querySelector
+const img = document.querySelector("img")!
+img.src
+//getElementByID
+const myImg = document.getElementById("img")! as HTMLImageElement
+
+myImg.src
