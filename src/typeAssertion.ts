@@ -44,6 +44,20 @@ let nextVal: number = addOrConcat(2, 2, "concat") as number
 const img = document.querySelector("img")!
 img.src
 //getElementByID
-const myImg = document.getElementById("img")! as HTMLImageElement
+const myImg = document.getElementById("#img")! as HTMLImageElement
 
 myImg.src
+
+//some examples of using Typescript
+//Original JS code
+// const year = document.getElementById(".year")
+// const thisYear = new Date().getFullYear()
+// year?.setAttribute("datetime", thisYear)
+// year.textContet = thisYear
+
+//TS code using assertions. assertion removes the null and undefined!
+//otherwise we would need to check if "year" exists or not
+const year: HTMLSpanElement = document.querySelector(".year") as HTMLSpanElement
+const thisYear: string = new Date().getFullYear().toString()
+year.setAttribute("datetime", thisYear.toString())
+year.textContent = thisYear
