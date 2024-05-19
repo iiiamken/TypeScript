@@ -1,10 +1,9 @@
 class Coder {
-  lang: string
   constructor(
     public name: string,
-    private music: string,
-    protected age: number,
-    lang: string = "TypeScript"
+    public music: string,
+    private age: number,
+    protected lang: string = "TypeScript"
   ) {
     this.name = name
     this.music = music
@@ -19,5 +18,24 @@ class Coder {
 const Dave = new Coder("Dave", "rock", 42, "typescript")
 //private vs protected modifier
 console.log(Dave.getAge()) //public method
-console.log(Dave.age) //protected property
-console.log(Dave.music) //private property
+console.log(Dave.age) //private property
+console.log(Dave.lang) //protected property
+
+// extend a class
+class WebDev extends Coder {
+  constructor(
+    public computer: string,
+    name: string,
+    music: string,
+    age: number
+  ) {
+    //needs a super like in vanilla JS which has everything we took in Coder
+    super(name, music, age)
+    this.computer = computer
+  }
+  public getLang() {
+    return `I write ${this.lang}`
+  }
+}
+const John = new WebDev("Macbook", "kenny", "R&B", 30)
+console.log(John.getLang())
