@@ -89,3 +89,19 @@ console.log(Ken.id)
 console.log(Steve.id)
 
 //gitters and setters
+class Bands {
+  private dataState: string[]
+  constructor() {
+    this.dataState = []
+  }
+  public get data(): string[] {
+    return this.dataState
+  }
+  public set data(value: string[]) {
+    if (Array.isArray(value) && value.every((el) => typeof el === "string")) {
+      this.dataState = value
+    } else {
+      throw new Error("Param is not an array of strings")
+    }
+  }
+}
