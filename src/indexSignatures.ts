@@ -43,6 +43,42 @@ const student: Student = {
   classes: [100, 200],
 }
 
+//keyof-keyword ex
 for (const key in student) {
   console.log(`${key}: ${student[key as keyof Student]}`)
+}
+// keyof example 2
+Object.keys(student).map(
+  //.keys method creates an array of the key values.
+  (key) => console.log(student[key as keyof typeof student])
+)
+
+//keyof example 3
+const logStudentKey = (student: Student, key: keyof Student): void => {
+  console.log(`Student ${key}: ${student[key]}`)
+}
+
+logStudentKey(student, "name")
+
+///////////////////////////////////////////////////////////
+
+// interface Incomes {
+//     [key: string] :number
+// }
+
+//alternative using type-keyword
+
+type Streams = "salary" | "bonus" | "side-hustle" //strin literals can be used as key types with records
+
+type Incomes = Record<Streams, number>
+
+const monthlyIncomes: Incomes = {
+  salary: 500,
+  bonus: 100,
+  "side-hustle": 250,
+}
+
+// records need to access keyof
+for (const revenue in monthlyIncomes) {
+  console.log(monthlyIncomes[revenue as keyof Incomes])
 }
