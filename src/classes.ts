@@ -105,3 +105,12 @@ class Bands {
     }
   }
 }
+
+//instance of Bands
+//getter
+const MyBands = new Bands()
+MyBands.data = ["Van Halen", "Scorpions"]
+console.log(MyBands.data) //["Van Halen", "Scorpions"]
+//setter
+MyBands.data = [...MyBands.data, "Green Day"]
+console.log(MyBands.data) //["Van Halen", "Scorpions", "Green Day"]
