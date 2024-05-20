@@ -28,3 +28,21 @@ const todaysNet = (transactions: TransactionObj) => {
   }
   return total
 }
+
+///////////////////////////////////////
+interface Student {
+  [key: string]: string | number | undefined | number[]
+  name: string
+  GPA: number
+  classes?: number[]
+}
+
+const student: Student = {
+  name: "Dave",
+  GPA: 4.0,
+  classes: [100, 200],
+}
+
+for (const key in student) {
+  console.log(`${key}: ${student[key as keyof Student]}`)
+}
