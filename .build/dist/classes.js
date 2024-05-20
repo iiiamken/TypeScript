@@ -1,3 +1,4 @@
+"use strict";
 // class Coder {
 //   constructor(
 //     public name: string,
@@ -14,13 +15,11 @@
 //     return `Hello, im ${this.age}` //will work bcus age is protected
 //   }
 // }
-
 // const Dave = new Coder("Dave", "rock", 42, "typescript")
 // //private vs protected modifier
 // console.log(Dave.getAge()) //public method
 // console.log(Dave.age) //private property
 // console.log(Dave.lang) //protected property
-
 // // extend a class
 // class WebDev extends Coder {
 //   constructor(
@@ -39,14 +38,12 @@
 // }
 // const John = new WebDev("Macbook", "kenny", "R&B", 30)
 // console.log(John.getLang())
-
 // //implementing interfaces to a class
 // interface Musician {
 //   name: string
 //   instrument: string
 //   play(action: string): string
 // }
-
 // class Guitarist implements Musician {
 //   name: string
 //   instrument: string
@@ -58,10 +55,8 @@
 //     return `${this.name} ${action} the ${this.instrument}`
 //   }
 // }
-
 // const Page = new Guitarist("Jimmy", "guitar")
 // console.log(Page.play("strums"))
-
 // //static members.
 // class Peeps {
 //   static count: number = 0
@@ -79,15 +74,12 @@
 //     this.id = ++Peeps.count // ++ sign is used to increment, if we put it first it will be 1
 //   }
 // }
-
 // const Ken = new Peeps("Ken")
 // const Steve = new Peeps("Steve")
-
 // //Peeps is the class itself while ken and Steve are instanciated objects using the constructor
 // console.log(Peeps.count)
 // console.log(Ken.id)
 // console.log(Steve.id)
-
 // //gitters and setters
 // class Bands {
 //   private dataState: string[]
@@ -105,7 +97,6 @@
 //     }
 //   }
 // }
-
 // //instance of Bands
 // //getter
 // const MyBands = new Bands()
