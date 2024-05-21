@@ -1,73 +1,73 @@
-const echo = <T>(arg: T): T => arg
+// const echo = <T>(arg: T): T => arg
 
-const isObj = <T>(arg: T): boolean => {
-  return typeof arg === "object" && !Array.isArray(arg) && arg !== null
-}
+// const isObj = <T>(arg: T): boolean => {
+//   return typeof arg === "object" && !Array.isArray(arg) && arg !== null
+// }
 
-console.log(true)
-console.log("John")
-console.log([1, 2, 3])
-console.log({ name: "Dave", age: 42 })
-console.log(null)
+// console.log(true)
+// console.log("John")
+// console.log([1, 2, 3])
+// console.log({ name: "Dave", age: 42 })
+// console.log(null)
 
-////original code
-// const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
+// ////original code
+// // const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
+// //   if (Array.isArray(arg) && !arg.length) {
+// //     return { arg, is: false }
+// //   }
+
+// //   if (isObj(arg) && !Object.keys(arg as keyof T).length) {
+// //     return { arg, is: false }
+// //   }
+// //   return { arg, is: true }
+// // }
+
+// //using interface
+// interface BoolCheck<T> {
+//   value: T
+//   is: boolean
+// }
+// const isTrue = <T>(arg: T): BoolCheck<T> => {
 //   if (Array.isArray(arg) && !arg.length) {
-//     return { arg, is: false }
+//     return { value: arg, is: false }
 //   }
 
 //   if (isObj(arg) && !Object.keys(arg as keyof T).length) {
-//     return { arg, is: false }
+//     return { value: arg, is: false }
 //   }
-//   return { arg, is: true }
+//   return { value: arg, is: true }
 // }
 
-//using interface or type
-interface BoolCheck<T> {
-  value: T
-  is: boolean
-}
-const isTrue = <T>(arg: T): BoolCheck<T> => {
-  if (Array.isArray(arg) && !arg.length) {
-    return { value: arg, is: false }
-  }
+// // extending interface
 
-  if (isObj(arg) && !Object.keys(arg as keyof T).length) {
-    return { value: arg, is: false }
-  }
-  return { value: arg, is: true }
-}
+// interface HasID {
+//   id: number
+// }
 
-// extending interface
+// const proccessUser = <T extends HasID>(user: T): T => {
+//   //do stuff with user
+//   return user
+// }
 
-interface HasID {
-  id: number
-}
+// //genereics with classes
+// class StateObject<T> {
+//   private data: T
+//   constructor(value: T) {
+//     this.data = value
+//   }
 
-const proccessUser = <T extends HasID>(user: T): T => {
-  //do stuff with user
-  return user
-}
+//   get state(): T {
+//     return this.data
+//   }
+//   set state(value: T) {
+//     this.data = value
+//   }
+// }
 
-//genereics with classes
-class StateObject<T> {
-  private data: T
-  constructor(value: T) {
-    this.data = value
-  }
+// const store = new StateObject("Dave")
+// console.log(store.state)
+// store.state = "John"
+// // store.state = 12 // error as TS infers the type to be string
 
-  get state(): T {
-    return this.data
-  }
-  set state(value: T) {
-    this.data = value
-  }
-}
-
-const store = new StateObject("Dave")
-console.log(store.state)
-store.state = "John"
-// store.state = 12 // error as TS infers the type to be string
-
-const myState = new StateObject<(string | number | boolean)[]>([15])
-myState.state = ["Dave", 42, true]
+// const myState = new StateObject<(string | number | boolean)[]>([15])
+// myState.state = ["Dave", 42, true]
