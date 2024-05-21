@@ -108,3 +108,13 @@ const tsAssign: newAssign = createNewAssign("utility types", 100)
 console.log(tsAssign)
 
 //Parameters
+
+type AssignParams = Parameters<typeof createNewAssign>
+
+const assignArgs: AssignParams = ["Generics", 100]
+
+const tsAssign2: newAssign = createNewAssign(...assignArgs)
+
+console.log(tsAssign2)
+
+//Awaited - return type of async function aka. promise
