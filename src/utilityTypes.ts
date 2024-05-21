@@ -90,4 +90,21 @@ type AllPossibleGrades = "Dave" | "John" | null | undefined
 
 type NamesOnly = NonNullable<AllPossibleGrades>
 
-//
+// ReturnType
+
+// type newAssign = { title: string; points: number }
+
+const createNewAssign = (title: string, points: number) => {
+  return {
+    title: title,
+    points: points,
+  }
+}
+
+type newAssign = ReturnType<typeof createNewAssign>
+
+const tsAssign: newAssign = createNewAssign("utility types", 100)
+
+console.log(tsAssign)
+
+//Parameters
