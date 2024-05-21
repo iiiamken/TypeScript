@@ -118,3 +118,31 @@ const tsAssign2: newAssign = createNewAssign(...assignArgs)
 console.log(tsAssign2)
 
 //Awaited - return type of async function aka. promise
+
+interface User {
+  id: number
+  name: string
+  username: string
+  email: string
+}
+
+/**
+ * Fetches a list of users from the given API endpoint.
+ *
+ * @return {Promise<User[]>} A promise that resolves to an array of User objects.
+ */
+const fetchUsers = async (): Promise<User[]> => {
+  const data = await fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => {
+      return res.json()
+    })
+    .catch((err) => {
+      if (err instanceof Error) console.log(err.message)
+    })
+  return data
+}
+
+// type FetchUsersReturnType = <ReturnType<typeof fetchUsers>>
+type FetchUsersReturnType = Awaited<ReturnType<typeof fetchUsers>>
+
+fetchUsers().then((users) => console.log(users))
