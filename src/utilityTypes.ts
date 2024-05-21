@@ -48,3 +48,36 @@ const finalGrades: Record<Students, LetterGrades> = {
   Sara: "B",
   Kelly: "A",
 }
+
+//record with interface
+interface Grades {
+  assign1: number
+  assign2: number
+}
+const studentGrade: Record<Students, Grades> = {
+  Sara: {
+    assign1: 90,
+    assign2: 85,
+  },
+  Kelly: {
+    assign1: 100,
+    assign2: 95,
+  },
+}
+
+//pick and omit
+type AssignResult = Pick<Assignment, "studentId" | "grade">
+
+const score: AssignResult = {
+  studentId: "comsdfi1123",
+  grade: 95,
+}
+
+type AssignPreview = Omit<Assignment, "grade" | "verified">
+
+const preview: AssignPreview = {
+  studentId: "comsdfi1123",
+  title: "Final",
+}
+
+//Exlude and Extract
